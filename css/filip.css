@@ -1,0 +1,501 @@
+:root {
+  --black: #414141;
+  --white: #fff;
+  --whiteSecondary: #d6d6d6;
+
+  --lightBlue: #69a4c9;
+  --lightBlueSecondary: #528aad;
+  
+  --blue: #3A6D8C;
+  --blueSecondary: #2d5975;
+  
+  --heroBackground: #f0f0f0cc;
+  --skill: #2053745e;
+  --contentBackground1: #f7e9ff48;
+  --contentBackground2: #e9fff683;
+  --projectTextBackground: #38378a7c;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, "Geneva", Verdana, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  color: var(--black);
+}
+
+#main-container {
+  position: relative;
+}
+
+.hidden {
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.shown {
+  opacity: 1;
+}
+
+/* Header write over */
+#header {
+  background-color: var(--white) !important;
+}
+
+#navbar ul li a {
+  color: var(--blue);
+  font-size: 1.2rem;
+}
+
+#hamburger-btn img {
+  filter: invert();
+}
+
+@media (max-width: 768px) {
+  #navbar {
+    background-color: #ffffffde;
+  }
+}
+
+/* Header write over end */
+
+/* ------Hero start------ */
+.hero-container {
+  background-color: var(--heroBackground);
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  padding: 0 3rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.hero-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  object-fit: cover;
+  object-position: center 50%;
+  z-index: -1;
+}
+
+.hero-text {
+  margin: auto 0;
+  max-width: 30rem;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.hero-btn {
+  text-decoration: none;
+  background-color: var(--blue);
+  width: max-content;
+  padding: 0.65rem 1.3rem;
+  border-radius: 2rem;
+  color: var(--white);
+}
+
+.hero-btn:hover {
+  background-color: var(--blueSecondary);
+  transition: all 0.3s;
+}
+
+.hero-socials {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.hero-socials a {
+  text-decoration: none;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+}
+
+.hero-socials a:hover {
+  color: var(--blue);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.hero-img {
+  align-self: center;
+  height: 25rem;
+}
+/* ------Hero end------ */
+
+/* ------Content start------ */
+.content-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+}
+
+.content-wrapper:nth-child(1), .content-wrapper:nth-child(4) {
+  background-color: var(--contentBackground1);
+}
+
+.content-wrapper:nth-child(2), .content-wrapper:nth-child(3) {
+  background-color: var(--contentBackground2);
+}
+
+.content-wrapper {
+  min-width: calc(50% - 0.15rem);
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  flex: 1;
+  overflow: hidden;
+  width: 100%;
+}
+
+.content-title {
+  margin-bottom: 1rem;
+}
+
+/* Roadmap */
+.roadmap-parent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.roadmap-child {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+
+/* TODO: before? */
+.roadmap-progress {
+  background-color: var(--black);
+  width: 3px;
+  min-height: calc(100% + 5px);
+  position: absolute;
+  top: 20px;
+}
+
+.roadmap-progress::before {
+  position: absolute;
+  content: "";
+  border: 2px solid var(--blue);
+  width: 15px;
+  height: 15px;
+  top: -17px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+}
+
+.roadmap-content {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.roadmap-date {
+  background-color: var(--blue);
+  width: max-content;
+  padding: 5px 15px;
+  margin: 10px 0;
+  color: var(--white);
+}
+
+.roadmap-place {
+  margin-bottom: 10px;
+}
+
+.roadmap-strong {
+  font-weight: bold;
+}
+
+
+/* Skills */
+.skills-parent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  box-sizing: border-box;
+}
+
+.skills-child {
+  position: relative;
+  flex: 1;
+  display: flex;
+  padding: 1.25rem;
+  gap: 1.2rem;
+  min-width: 12.5rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  background-color: var(--skill);
+}
+
+.skills-fill {
+  position: absolute;
+  background-color: var(--blue);
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 0;
+  transition: width 2s ease;
+}
+
+.skills-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  transition: all 0.7s;
+  margin: auto 0;
+  filter: drop-shadow(0 0 1px #00000086)
+}
+
+.skills-child:hover > .skills-logo {
+  transform: scale(1.2);
+  transition: all 0.7s;
+}
+
+.skills-text {
+  display: flex;
+  flex-direction: column;
+  color: var(--white) !important;
+  text-shadow: 0 0 3px black;
+}
+
+.skills-title {
+  font-size: 1.25rem;
+}
+
+.skills-cat {
+  font-style: italic;
+}
+
+
+/* Project */
+.project-sort {
+  padding: 0 0 10px 0px;
+  display: flex;
+  gap: 10px;
+}
+
+.search-input {
+  background: none;
+  border: 0;
+  outline: 0;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+.project-select {
+  border: none;
+  outline: none;
+  width: 200px;
+  background: none;
+  border-bottom: 1px solid black;
+}
+
+.project-parent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.project-child {
+  flex: 1;
+  background-color: var(--blue);
+  min-width: 15.6rem;
+  max-width: 45rem;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.project-child::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  background: linear-gradient(110deg, transparent 35%, 70%, var(--lightBlue));
+  opacity: 0;
+  transition: all 0.3s;
+  z-index: 2;
+}
+
+.project-child:hover::before {
+  opacity: 1;
+}
+
+.project-img-parent {
+  position: relative;
+}
+
+.project-img-text {
+  position: absolute;
+  bottom: 4px;
+  width: 100%;
+  background-color: var(--projectTextBackground);
+  padding: 0.2rem 1.25rem;
+  color: var(--whiteSecondary);
+  box-sizing: border-box;
+  backdrop-filter: blur(4px);
+}
+
+.project-img-text span {
+  font-style: italic;
+}
+
+.project-img {
+  width: 100%;
+}
+
+.project-text {
+  padding: 0.7rem 1.25rem;
+  margin-bottom: auto;
+  overflow-wrap: break-word;
+  color: var(--white);
+}
+
+.project-title {
+  font-weight: bold;
+}
+
+.project-desc {
+  margin-bottom: 0.25rem;
+}
+
+/* Carousel */
+.carousel-parent {
+  height: 700px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-parent img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 70%;
+}
+
+.carousel-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background-color: #0000006b;
+  color: var(--white);
+  padding: 15px 40px;
+  backdrop-filter: blur(2px);
+  box-sizing: border-box;
+}
+
+.carousel-title {
+  font-size: 1.5rem;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 0;
+  height: 75%;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  cursor: pointer;
+  color: var(--white);
+  text-shadow: 1px 1px 3px black;
+}
+
+.carousel-btn.prev {
+  left: -10px;
+  background: linear-gradient(90deg, #00000089 0%, #0000006e 23%, #00000048 50%, #00000022 75%, #00000000 100%);
+}
+
+.carousel-btn.prev:hover {
+  left: -5px;
+}
+
+.carousel-btn.next {
+  right: -10px;
+  background: linear-gradient(-90deg, #00000089 0%, #0000006e 23%, #00000048 50%, #00000022 75%, #00000000 100%);
+}
+
+.carousel-btn.next:hover {
+  right: -5px;
+}
+
+.carousel-indicator {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-indicator div {
+  background-color: #425e99;
+  border-radius: 10px;
+  width: 30px;
+  height: 5px;
+}
+
+.carousel-indicator div.active {
+  background-color: #8fb0f8;
+}
+
+
+/* ------Carousel end------ */
+
+@media screen and (max-width: 900px) {
+  .project-sort {
+    flex-direction: column;
+  }
+  .project-select {
+    width: 100%;
+    padding: 7px 5px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .content-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero-container {
+    position: relative;
+    height: max-content;
+    padding: 1.85rem;
+  }
+  .hero-img {
+    position: absolute;
+    height: 18.75rem;
+    right: 0;
+    bottom: -8.75rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .hero-img {
+    display: none;
+  }
+}

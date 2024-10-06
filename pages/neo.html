@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/assets/icons/GabFilNeoSim.png">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/neo.css">
+  <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script defer src="/js/neo.js"></script>
+  <title>GabFilNeoSim - Neo</title>
+</head>
+
+<body>
+  <div id="app">
+    <header id="header">
+      <a href="/">
+        <img src="/assets/icons/GabFilNeoSim.png" alt="company logo">
+      </a>
+      <nav id="navbar" :class="showMenu ? 'mobile-active' : null">
+        <ul>
+          <li><a href="/pages/gabriel.html">Gabriel</a></li>
+          <li><a href="/pages/filip.html">Filip</a></li>
+          <li><a href="/pages/neo.html">Neo</a></li>
+          <li><a href="/pages/simon.html">Simon</a></li>
+        </ul>
+      </nav>
+      <button id="hamburger-btn">
+        <img src="/assets/icons/menu.svg" alt="Hamburger logo" @click="toggleMenu()">
+      </button>
+    </header>
+    <main id="page-container">
+      <section id="profile-container" class="hidden">
+        <img src="/assets/images/neo/profile.jpg" alt="image of the author">
+        <div id="profile-text">
+          <h1>Neo Åhlander</h1>
+          <p>Som konsult hos GabFilNeoSim är jag involverad i utveckling av både frontend- och backend-system. Jag
+            arbetar med att skapa robusta och användarvänliga systemlösningar för våra kunder, vilket inkluderar allt
+            från design och användargränssnitt till serverlogik och databashantering.</p>
+        </div>
+      </section>
+      <section id="project-container" class="hidden">
+        <h2>Projekt</h2>
+        <div id="project-options">
+          <input id="project-search" placeholder="sök projekt" type="text" v-model="search">
+          <select id="project-sort" v-model="sortOption">
+            <option value="0">Standard</option>
+            <option value="1">Alfabetiskt</option>
+          </select>
+        </div>
+        <div id="project-wrapper">
+          <div class="project-item" v-for="project in projectOptions" :key="project.id">
+            <img :src="project.img" alt="image of the project">
+            <div class="project-text">
+              <h3>{{ project.title }}</h3>
+              <p>{{ project.description }}</p>
+              <h4>{{ project.customer }}</h4>
+            </div>
+          </div>
+          <p v-if="projectOptions === null">Inga projekt hittades</p>
+        </div>
+      </section>
+      <div id="skills-slideshow">
+        <div id="skills-container" class="hidden">
+          <div id="skills">
+            <div class="skill">
+              <p>Go</p>
+              <div class="bar">
+                <div id="go" class="bar fill">85%</div>
+              </div>
+            </div>
+            <div class="skill">
+              <p>Python</p>
+              <div class="bar">
+                <div id="python" class="bar fill">80%</div>
+              </div>
+            </div>
+            <div class="skill">
+              <p>SQL</p>
+              <div class="bar">
+                <div id="sql" class="bar fill">60%</div>
+              </div>
+            </div>
+            <div class="skill">
+              <p>HTML</p>
+              <div class="bar">
+                <div id="html" class="bar fill">75%</div>
+              </div>
+            </div>
+            <div class="skill">
+              <p>CSS</p>
+              <div class="bar">
+                <div id="css" class="bar fill">45%</div>
+              </div>
+            </div>
+            <div class="skill">
+              <p>JavaScript</p>
+              <div class="bar">
+                <div id="js" class="bar fill">55%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="slideshow-container" class="hidden">
+          <div id="slideshow-wrapper">
+            <button @click="prevImage" class="slideshow-btn">
+              <img src="/assets/icons/neo/arrow_left.svg" alt="slideshow left arrow">
+            </button>
+            <div id="slideshow">
+              <img v-for="(image, index) in images" class="slideshow-item" :key="index" :class="setImageClass(index)"
+                :src="getImagePath(image)" alt="image of a cute and lovely dog">
+            </div>
+            <button @click="nextImage" class="slideshow-btn">
+              <img src="/assets/icons/neo/arrow_right.svg" alt="slideshow right arrow">
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+[
+    {
+        "id": 0,
+        "title": "Next.js",
+        "percentage": 70,
+        "img": "next.png"
+    },
+    {
+        "id": 1,
+        "title": "React",
+        "percentage": 60,
+        "img": "react.png"
+    },
+    {
+        "id": 3,
+        "title": "Sass",
+        "percentage": 65,
+        "img": "sass.png"
+    },
+    {
+        "id": 4,
+        "title": "Docker",
+        "percentage": 60,
+        "img": "docker.webp"
+    }
+]

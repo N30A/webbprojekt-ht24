@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/assets/icons/favicon.ico" />
+    <link rel="stylesheet" href="/css/gabriel.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer src="/js/gabriel.js"></script>
+    <title>Gabriel</title>
+  </head>
+  <body>
+    <div id="app">
+      <header id="header">
+        <a href="/">
+          <img src="/assets/icons/GabFilNeoSim.png" alt="company logo" />
+        </a>
+        <nav id="navbar" :class="showMenu ? 'mobile-active' : null">
+          <ul>
+            <li><a href="/pages/gabriel.html">Gabriel</a></li>
+            <li><a href="/pages/filip.html">Filip</a></li>
+            <li><a href="/pages/neo.html">Neo</a></li>
+            <li><a href="/pages/simon.html">Simon</a></li>
+          </ul>
+        </nav>
+        <button id="hamburger-btn">
+          <img
+            src="/assets/icons/menu.svg"
+            alt="Hamburger logo"
+            @click="toggleMenu()"
+          />
+        </button>
+      </header>
+      <div class="hero">
+        <img
+          class="hero-image"
+          src="/assets/images/Gabriel/hero-image.jpg"
+          alt="En naturbild"
+        />
+        <div class="hero-content">
+          <img
+            class="portrait"
+            src="/assets/images/Gabriel/porträtt.jpg"
+            alt="Bild på Gabriel"
+          />
+          <div class="hero-text">
+            <h1>Gabriel Dolk</h1>
+            <p>Konsult för GabFilNeoSim</p>
+            <p>
+              Jag utvecklar webbsystem som kommer att underlätta för dig och din
+              verksamhet!
+            </p>
+            <div class="btn-contact">
+              <a href="#">Kontakt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content-container">
+        <div class="content-title">
+          <h2>Content</h2>
+        </div>
+        <div class="card-container">
+          <div class="card-item">
+            <div class="card-header">
+              <div class="card-logo">
+                <img
+                  src="/assets/images/Gabriel/icon-info.png"
+                  alt="Info-icon"
+                />
+              </div>
+              <p>Info</p>
+            </div>
+            <div class="card-line"></div>
+            <div class="card-text">
+              <p>
+                Mitt namn är Gabriel och jag är 24 år. Jag arbetar som
+                webbutvecklare och brinner för att skapa innovativa och
+                effektiva digitala lösningar som gör verklig skillnad för
+                användare och företag. Under min karriär har jag haft
+                möjligheten att arbeta med flera olika kundprojekt, där jag
+                hjälpt företag att förverkliga sina digitala visioner genom att
+                bygga moderna och användarvänliga webbplatser och applikationer.
+                Från design och frontend-utveckling till backend-lösningar och
+                integreringar, har jag erfarenhet av att anpassa tekniska
+                lösningar för att möta specifika behov och mål. <br /><br />
+                Jag strävar alltid efter att leverera hög kvalitet i mina
+                projekt, oavsett om det handlar om att bygga en responsiv
+                webbdesign, förbättra prestandan på en existerande webbplats,
+                eller optimera en webblösning för bättre användarupplevelse.
+                Genom att arbeta nära kunderna säkerställer jag att deras vision
+                förvandlas till verklighet och att varje projekt levereras i
+                tid, med bästa möjliga resultat. <br /><br />Utanför arbetet
+                spenderar jag gärna tid på gymmet, då träning är en stor passion
+                för mig. Det hjälper mig att hålla mig fokuserad, energisk och
+                balanserad i min vardag. Jag tror starkt på att en aktiv
+                livsstil bidrar till ökad produktivitet och kreativitet, och jag
+                ser alltid till att hitta en balans mellan arbete och fritid.
+              </p>
+            </div>
+          </div>
+
+          <div class="card-item">
+            <div class="card-header">
+              <div class="card-logo">
+                <img
+                  src="/assets/images/Gabriel/icon-project.png"
+                  alt="Project-icon"
+                />
+              </div>
+              <p>Mina projekt</p>
+            </div>
+            <div class="card-line"></div>
+            <div class="card-projects">
+              <a
+                href="#"
+                class="project-item"
+                v-for="project in projects"
+                :key="project.id"
+              >
+                <img :src="project.img" alt="projektbild" />
+                <div class="project-text">
+                  <p class="project-customer-title">{{ project.title }}</p>
+                  <div class="card-line"></div>
+                  <p>{{ project.description }}</p>
+                  <p class="project-customer">{{ project.customer }}</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="card-item">
+            <div class="card-header">
+              <div class="card-logo">
+                <img
+                  src="/assets/images/Gabriel/icon-slideshow.png"
+                  alt="slideshow-icon"
+                />
+              </div>
+              <p>Bildspel</p>
+            </div>
+            <div class="card-line"></div>
+            <div class="card-slideshow-container">
+              <div class="card-slideshow-wrapper">
+                <button @click="prevImage" class="slideshow-btn">
+                  <img
+                    src="/assets/images/Gabriel/btn-arrow-left.png"
+                    alt="pil vänster"
+                  />
+                </button>
+                <div class="card-slideshow">
+                  <img
+                    class="card-slideshow-item"
+                    v-for="(slide, index) in slides"
+                    :key="index"
+                    :src="getImagePath(slide)"
+                    :class="{ active: index === this.index }"
+                    alt="Slideshow bild"
+                  />
+                </div>
+                <button @click="nextImage" class="slideshow-btn">
+                  <img
+                    src="/assets/images/Gabriel/btn-arrow-right.png"
+                    alt="pil höger"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-item">
+            <div class="card-header">
+              <div class="card-logo">
+                <img
+                  src="/assets/images/Gabriel/icon-skills.png"
+                  alt="skills-icon"
+                />
+              </div>
+              <p>Skills</p>
+            </div>
+            <div class="card-line"></div>
+            <div class="card-skill-container">
+              <div class="skills">
+                <div class="skill">
+                  <img src="/assets/icons/python.png" alt="python-icon" />
+                  <div class="skill-bar">
+                    <div class="fill-bar" id="python">60%</div>
+                  </div>
+                </div>
+                <div class="skill">
+                  <img src="/assets/icons/css.png" alt="css-icon" />
+                  <div class="skill-bar">
+                    <div class="fill-bar" id="css">70%</div>
+                  </div>
+                </div>
+                <div class="skill">
+                  <img src="/assets/icons/java.png" alt="java-icon" />
+                  <div class="skill-bar">
+                    <div class="fill-bar" id="java">30%</div>
+                  </div>
+                </div>
+                <div class="skill">
+                  <img src="/assets/icons/html.png" alt="html-icon" />
+                  <div class="skill-bar">
+                    <div class="fill-bar" id="html">80%</div>
+                  </div>
+                </div>
+                <div class="skill">
+                  <img src="/assets/icons/mysql.png" alt="mySql-icon" />
+                  <div class="skill-bar">
+                    <div class="fill-bar" id="mySql">65%</div>
+                  </div>
+                </div>
+                <div class="skill">
+                  <img src="/assets/icons/react.png" alt="react-icon" />
+                  <div class="skill-bar">
+                    <div class="fill-bar" id="react">85%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

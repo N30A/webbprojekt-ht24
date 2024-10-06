@@ -1,0 +1,215 @@
+:root {
+  font-size: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #313f53;
+  color: #fff;
+}
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;  
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.025), 0 -4px 8px rgba(0, 0, 0, 0.025);
+}
+
+#hero img {
+  position: absolute;
+  opacity: 0.15;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.hero-text {
+  display: flex;
+  gap: 20px;
+  text-align: center;
+  flex-direction: column;
+  padding: 10px 20px;
+  max-width: 900px;
+  z-index: 1;
+}
+
+#content {
+  padding-bottom: 50px;
+}
+
+#cards {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 3.5rem auto;
+  gap: 2rem;
+}
+
+.card {
+  width: 300px;
+  background-color: #27354a;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s;
+}
+
+.card:hover {
+  box-shadow: 0 0 25px 2px #99e6996b;
+}
+
+.card-header {
+  background-color: rgba(128, 245, 167, 0.521);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.card-info span {
+  font-size: 0.75rem;
+}
+
+.card-image {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  background-color: #cecece;
+  object-fit: cover;
+  object-position: center 5%;
+}
+
+.card-text {
+  padding: 15px;
+  font-size: 0.8rem;
+}
+
+.card-text span {
+  background-color: #8080804f;
+}
+
+/* kontakt - start */
+
+#contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact-card {
+  overflow: hidden;
+  background-color: #27354a;
+  border-radius: 10px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+#contact-form {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 2rem;
+}
+
+#contact-header {
+  background-color: rgba(128, 245, 167, 0.521);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.form-child {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-child input, .form-child textarea {
+  outline: none;
+  border: none;
+  padding: 10px;
+  resize: vertical;
+  border-radius: 5px;
+}
+
+.form-child > label > span {
+  color: rgb(255, 129, 129);
+}
+
+.form-child input[type="submit"] {
+  background-color: rgba(128, 245, 167, 0.521);
+  color: #fff;
+  cursor: pointer;
+}
+
+.form-child input[type="submit"]:hover {
+  background-color: #43b96b;
+  transition: all 0.3s;
+}
+
+.form-child input.invalid {
+  box-shadow: 0 0 0 2px #ff0000;
+
+}
+
+/* kontakt - slut */
+
+@media (max-width: 630px) {
+  #cards {
+    margin: 20px 0;
+  }
+  .card {
+    width: 95%;
+  }
+}
+
+@media (max-width: 535px) {
+  .form-row {
+    flex-direction: column;
+  }
+  
+  #contact-card {
+    width: 95%;
+  }
+
+  #contact-form {
+    width: 95%;
+  }
+
+  .form-child input, .form-child textarea {
+    width: 70%;    
+  }
+
+}

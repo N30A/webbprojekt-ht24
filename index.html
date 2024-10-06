@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/assets/icons/GabFilNeoSim.png" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer src="/js/index.js"></script>
+    <title>GabFilNeoSim</title>
+  </head>
+  <body>
+    <div id="app">
+      <header id="header">
+        <a href="/">
+          <img src="/assets/icons/GabFilNeoSim.png" alt="company logo" />
+        </a>
+        <nav id="navbar" :class="showMenu ? 'mobile-active' : null">
+          <ul>
+            <li><a href="/pages/gabriel.html">Gabriel</a></li>
+            <li><a href="/pages/filip.html">Filip</a></li>
+            <li><a href="/pages/neo.html">Neo</a></li>
+            <li><a href="/pages/simon.html">Simon</a></li>
+          </ul>
+        </nav>
+        <button id="hamburger-btn">
+          <img
+            src="/assets/icons/menu.svg"
+            alt="Hamburger logo"
+            @click="toggleMenu()"
+          />
+        </button>
+      </header>
+      <main id="content">
+        <section id="hero">
+          <img src="/assets/images/hero.jpg" alt="the hero image">
+          <div class="hero-text">
+            <h1>GabFilNeoSim</h1>
+            <p>Vi är ett innovativt IT-konsultföretag som specialiserar sig på skräddarsydda systemlösningar för företag i alla storlekar. Vi erbjuder allt från systemutveckling och integration till optimering och support, med fokus på att leverera effektiva och skalbara lösningar. Vårt team av experter arbetar nära våra kunder för att säkerställa att deras tekniska behov möts med smarta och framtidssäkra lösningar. Med oss som partner får ni inte bara en lösning – ni får en långsiktig partner för er digitala utveckling.</p>
+          </div>
+        </section>
+        <section id="cards">
+          <a class="card" href="/pages/gabriel.html">
+            <div class="card-header">
+              <div class="card-info">
+                <h2>Gabriel</h2>
+                <span>Konsult & fotbollsfantast</span>
+              </div>
+              <img
+                class="card-image"
+                src="/assets/images/Gabriel/porträtt.jpg"
+                alt="Bild på Gabriel"
+              />
+            </div>
+            <div class="card-text">
+              <p>
+                Företagets obestridliga fotbollsfantast som kodar en hemsida snabbare än du kan säga "offside".<br><br>Jag jonglerar JavaScript som en fotboll och vet alltid när det är dags för en <span>systemåterställning</span> – som att dra ett rött kort vid fel passning. När servern går ner är jag redo att ge den en <span>sudo rm -rf / </span> – bättre än en restart!
+              </p>
+            </div>
+          </a>
+          <a class="card" href="/pages/filip.html">
+            <div class="card-header">
+              <div class="card-info">
+                <h2>Filip</h2>
+                <span>Konsult & dörröppnare</span>
+              </div>
+              <img
+                class="card-image"
+                src="/assets/images/filip/avatar.png"
+                alt="Bild på Filip"
+              />
+            </div>
+            <div class="card-text">
+              <p>
+                Som GabFilNeoSims officiella dörröppnare är jag den som släpper in alla användare till vår IT-värld – tänk på mig som företagets <span>sudo access granted.</span><br><br>Jag skapar kontakter lika enkelt som att köra <span>CTRL+C</span>, <span>CTRL+V</span> och ser till att alla problem möts med <span>try turning it off and on again</span>.
+              </p>
+            </div>
+          </a>
+          <a class="card" href="/pages/neo.html">
+            <div class="card-header">
+              <div class="card-info">
+                <h2>Neo</h2>
+                <span>Konsult & kock</span>
+              </div>
+              <img
+                class="card-image"
+                src="/assets/images/neo/profile.jpg"
+                alt="Bild på Neo"
+              />
+            </div>
+            <div class="card-text">
+              <p>
+                Jag är inte bara en mästare på att koda smaklökar, utan debuggar också alla hungerproblem på nolltid. Med recept som kompilerar perfekt varje gång och serveringar som aldrig kraschar.<br><br>Jag ser till att ingen fastnar i en hunger-loop, och precis som en server är alltid kylskåpet uppe och snurrar – för vi vet att ingen vill möta en <span>404: Food Not Found</span> vid lunchdags!
+              </p>
+            </div>
+          </a>
+          <a class="card" href="/pages/simon.html">
+            <div class="card-header">
+              <div class="card-info">
+                <h2>Simon</h2>
+                <span>Konsult & kaffedrickare</span>
+              </div>
+              <img
+                class="card-image"
+                src="/assets/images/simon/headshot.png"
+                alt="Bild på Simon"
+              />
+            </div>
+            <div class="card-text">
+              <p>
+                Jag är företagets obestridda kaffekonsult – alltid redo att optimera både system och koffeinintag. Jag ser till att varje kopp bryggs med precision och att kaffemaskinen aldrig går ner i drift. Glöm <span>try-catch</span>, jag kör <span>brew-drink</span>.<br><br>Utan kaffe riskerar jag att hamna i en infinite loop av slöhet – och det är en bugg ingen vill ha i systemet!
+              </p>
+            </div>
+          </a>
+        </section>
+        <section id="contact">
+          <div id="contact-card">
+            <div id="contact-header">
+              <h1>Kontakta oss</h1>
+            </div>
+            <form id="contact-form">
+              <div class="form-row">
+                <div class="form-child">
+                  <label for="firstName">Förnamn<span>*</span></label>
+                  <input
+                    id="firstName"
+                    type="text"
+                    v-model="contact.firstName"
+                    :class="handleInput('firstName', 'letters')"
+                  />
+                </div>
+                <div class="form-child">
+                  <label for="lastName">Efternamn<span>*</span></label>
+                  <input
+                    id="lastName"
+                    type="text"
+                    v-model="contact.lastName"
+                    :class="handleInput('lastName', 'letters')"
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-child">
+                  <label for="phone">Telefonnummer<span>*</span></label>
+                  <input
+                    id="phone"
+                    type="text"
+                    v-model="contact.phone"
+                    :class="handleInput('phone', 'phone')"
+                  />
+                </div>
+                <div class="form-child">
+                  <label for="email">Epost<span>*</span></label>
+                  <input
+                    id="email"
+                    type="text"
+                    v-model="contact.email"
+                    :class="handleInput('email', 'emailMusts')"
+                  />
+                </div>
+              </div>
+              <div class="form-child">
+                <label for="message">Meddelande</label>
+                <textarea
+                  rows="6"
+                  id="message"
+                  v-model="contact.message"
+                ></textarea>
+              </div>
+              <div class="form-child">
+                <input
+                  id="submit"
+                  type="submit"
+                  value="Skicka"
+                  @click="(event) => event.preventDefault()"
+                />
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

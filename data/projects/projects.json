@@ -1,0 +1,163 @@
+[
+    {
+        "id": 1,
+        "title": "Webbplatsutveckling för E-handelsföretag",
+        "description": "Utvecklaasdasdasdadsasdadsasdasdasdasdasdasdasdadsadsde en modern och responsiv e-handelswebbplats med integrerade betalningslösningar.",
+        "customer": "Eshop AB",
+        "img": "Eshop-AB.webp",
+        "manager": "filip"
+    },
+    {
+        "id": 2,
+        "title": "CRM-systemintegration",
+        "description": "Implementerade ett nytt CRM-system som förbättrade kundhantering och automatiserade försäljningsprocessen.",
+        "customer": "Säljkonsulterna AB",
+        "img": "Saljkonsulterna-AB.webp",
+        "manager": "filip"
+        
+    },
+    {
+        "id": 3,
+        "title": "Molnbaserad lagringstjänst",
+        "description": "Skapade en säker molnlösning för datalagring och samarbete mellan olika team.",
+        "customer": "TechSolutions AB",
+        "img": "TechSolutions-AB.webp",
+        "manager": "filip"
+    },
+    {
+        "id": 4,
+        "title": "Webbapplikation för bokningssystem",
+        "description": "Utvecklade en skalbar webbapplikation för bokningar med realtidsuppdateringar och användarvänlig design.",
+        "customer": "Bokningscentralen",
+        "img": "Bokningscentralen.webp",
+        "manager": "filip"
+    },
+    {
+        "id": 5,
+        "title": "Intern säkerhetsplattform",
+        "description": "Implementerade en intern säkerhetsplattform för att skydda känslig företagsdata.",
+        "customer": "Finansdata AB",
+        "img": "Finansdata-AB.webp",
+        "manager": "filip"
+    },
+    {
+        "id": 6,
+        "title": "Optimering av databassystem",
+        "description": "Optimerade företagets databassystem för snabbare dataåtkomst och bättre prestanda.",
+        "customer": "Datakonsulten",
+        "img": "/assets/images/neo/databassystem.webp",
+        "manager": "neo"
+    },
+    {
+        "id": 7,
+        "title": "Mobilapp för kundhantering",
+        "description": "Utvecklade en mobilapplikation för att förbättra företagets hantering av kundsupport.",
+        "customer": "Supportia AB",
+        "img": "/assets/images/neo/mobilapp.webp",
+        "manager": "neo"
+    },
+    {
+        "id": 8,
+        "title": "Automatiserad fakturering",
+        "description": "Skapade ett automatiserat system för fakturering och betalningsuppföljning för att effektivisera ekonomiavdelningen.",
+        "customer": "Ekonomikonsulterna",
+        "img": "/assets/images/neo/automatedinvoice.webp",
+        "manager": "neo"
+    },
+    {
+        "id": 9,
+        "title": "UX/UI-design för ny företagsportal",
+        "description": "Designade ett nytt gränssnitt för en företagsportal med fokus på användarupplevelse och tillgänglighet.",
+        "customer": "Portaldesign AB",
+        "img": "/assets/images/neo/design.webp",
+        "manager": "neo"
+    },
+    {
+        "id": 10,
+        "title": "Integration av tredjepartssystem",
+        "description": "Integrerade ett tredjepartssystem för hantering av leveranskedjan och effektiviserade logistiken.",
+        "customer": "Logistix AB",
+        "img": "/assets/images/neo/thirdpartysystem.webp",
+        "manager": "neo"
+    },
+    {
+        "id": 11,
+        "title": "Skräddarsydd ERP-lösning",
+        "description": "Utvecklade ett skräddarsytt ERP-system för att hantera ekonomi, personal och lagerhållning.",
+        "customer": "Industrikraft AB",
+        "img": "/assets/images/Gabriel/projekt1.jpg",
+        "manager": "Gabriel"
+    },
+    {
+        "id": 12,
+        "title": "Dataanalysplattform",
+        "description": "Skapade en plattform för avancerad dataanalys och rapportering för att stödja affärsbeslut.",
+        "customer": "Analytica AB",
+        "img": "/assets/images/Gabriel/projekt2.jpg",
+        "manager": "Gabriel"
+    },
+    {
+        "id": 13,
+        "title": "Nyhetsbrevplattform",
+        "description": "Utvecklade en plattform för att hantera och skicka ut nyhetsbrev till företagets kunder.",
+        "customer": "Marknadshuset",
+        "img": "/assets/images/Gabriel/projekt3.jpg",
+        "manager": "Gabriel"
+    },
+    {
+        "id": 14,
+        "title": "Intranät för internt samarbete",
+        "description": "Byggde ett intranät för att underlätta kommunikation och samarbete mellan olika avdelningar.",
+        "customer": "Samverkan AB",
+        "img": "/assets/images/Gabriel/projekt4.jpg",
+        "manager": "Gabriel"
+    },
+    {
+        "id": 15,
+        "title": "E-handelslösning med produktkatalog",
+        "description": "Implementerade en e-handelsplattform med en omfattande produktkatalog och kundrecensioner.",
+        "customer": "Webbhandel AB",
+        "img": "/assets/images/Gabriel/projekt5.jpg",
+        "manager": "Gabriel"
+    },
+    {
+        "id": 16,
+        "title": "Automatiserad kundsupportbot",
+        "description": "Utvecklade en AI-driven chatbot för att automatisera kundsupport och svara på vanliga frågor.",
+        "customer": "Kundtjänstproffs AB",
+        "img": "/assets/images/simon/customersupport.jpg",
+        "manager": "simon"
+    },
+    {
+        "id": 17,
+        "title": "Optimering av SEO-strategi",
+        "description": "Förbättrade företagets synlighet online genom en optimerad SEO-strategi och sökordsanalys.",
+        "customer": "Digitala Experterna",
+        "img": "/assets/images/simon/seo.jpg",
+        "manager": "simon"
+    },
+    {
+        "id": 18,
+        "title": "Webbplats för utbildningsplattform",
+        "description": "Utvecklade en interaktiv webbplats för en online-utbildningsplattform med kursmoduler och prov.",
+        "customer": "UtbildningOnline AB",
+        "img": "/assets/images/simon/education.png",
+        "manager": "simon"
+    },
+    {
+        "id": 19,
+        "title": "Mobilanpassning av befintlig webbsida",
+        "description": "Mobiloptimerade en befintlig webbsida för att förbättra användarupplevelsen på smartphones.",
+        "customer": "MobilUX AB",
+        "img": "/assets/images/simon/responsive.webp",
+        "manager": "simon"
+    },
+    {
+        "id": 20,
+        "title": "Datamigrering till molnplattform",
+        "description": "Genomförde en säker och smidig migrering av företagsdata till en molnbaserad plattform.",
+        "customer": "Molnkraft AB",
+        "img": "/assets/images/simon/datamigration.webp",
+        "manager": "simon"
+    }
+]

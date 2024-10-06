@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/assets/icons/GabFilNeoSim.png">
+    <script src="https://kit.fontawesome.com/4e3e087dd4.js" crossorigin="anonymous"></script>
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer src="/js/filip.js"></script>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/filip.css">
+    <title>Filip</title>
+  </head>
+  <body>
+    <div id="main-container">
+      <header id="header">
+        <a href="/">
+          <img src="/assets/icons/GabFilNeoSim.png" alt="company logo">
+        </a>
+        <nav id="navbar" :class="showMenu ? 'mobile-active' : null">
+          <ul>
+            <li><a href="/pages/gabriel.html">Gabriel</a></li>
+            <li><a href="/pages/filip.html">Filip</a></li>
+            <li><a href="/pages/neo.html">Neo</a></li>
+            <li><a href="/pages/simon.html">Simon</a></li>
+          </ul>
+        </nav>
+        <button id="hamburger-btn">
+          <img
+           src="/assets/icons/menu.svg"
+           alt="Hamburger logo"
+           @click="toggleMenu()"
+          >
+        </button>
+      </header>
+
+      <div class="hero-container">
+        <img class="hero-background" src="/assets/images/filip/background.webp" alt="Molnig himmel">
+        <div class="hero-text">
+          <h1>Filip Siri</h1>
+          <p>
+            På GabFilNeoSim specialiserar jag mig på skräddarsydd webbutveckling som stärker ditt företags digitala närvaro. Jag levererar effektiva och kvalitativa lösningar som gör skillnad.
+          </p>
+          <a class="hero-btn" href="#">Kontakta mig</a>
+          <div class="hero-socials">
+            <a href="#">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="#">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+        <img
+          src="/assets/images/filip/avatar.png"
+          alt="Bild på skapare."
+          class="hero-img"
+          draggable="false"
+        />
+      </div>
+  
+      <main class="content-container">
+        <section class="content-wrapper hidden">
+          <h2 class="content-title">Kompetenser</h2>
+          <div class="skills-parent" v-if="skills !== null">
+            <div class="skills-child" v-for="skill in skills" :key="skill.id">
+              <div class="skills-fill" :data-id="skill.id"></div>
+              <img
+                class="skills-logo"
+                :src="getIconImage(skill.img)"
+                :alt="skill.title + '-logotyp'"
+              />
+              <div class="skills-text">
+                <p class="skills-title">{{skill.title}}</p>
+                <p class="skills-cat">{{skill.cat}}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+        <section class="content-wrapper hidden">
+          <h2 class="content-title">Utbildning</h2>
+          <div class="roadmap-parent">
+            <div class="roadmap-child" v-for="point in roadmap" :key="point.id">
+              <div class="roadmap-progress"></div>
+              <div class="roadmap-content">
+                <h3 class="roadmap-title">{{point.title}}</h3>
+                <span class="roadmap-date">{{point.date}}</span>
+                <i class="roadmap-place">{{point.place}}</i>
+                <span class="roadmap-strong">Relevanta kurser</span>
+                <p>{{point.courses}}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+        <section class="content-wrapper hidden">
+          <h2 class="content-title">Projekt</h2>
+          <div class="project-sort">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Skriv för att söka..."
+              v-model="projectInputVal"
+            >
+            <select class="project-select" v-model="selectedOption">
+              <option value="standard">Standard</option>
+              <option value="alphabetical">Alfabetiskt</option>
+            </select>
+          </div>
+
+          <div class="project-parent">
+            <div
+             class="project-child"
+             v-for="project in filteredProjects"
+             :key="project.id"
+            >
+              <div class="project-img-parent">
+                <img
+                 class="project-img"
+                 :src="getPublicImage(project.img)"
+                 :alt="'Nyhetsbild åt ' + project.customer"
+                >
+                <div class="project-img-text">
+                  <p>Skapad åt <span>{{project.customer}}</span></p>
+                </div>
+              </div>
+              <div class="project-text">
+                <p class="project-title">{{project.title}}</p>
+                <p class="project-desc">{{project.description}}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+        <section class="content-wrapper hidden">
+          <h2 class="content-title">Bilder</h2>
+          <div class="carousel-parent" v-if="images">
+
+            <img
+             :src="getPublicImage(images[imageIndex].img)"
+             :alt="images[imageIndex].alt"
+            >
+
+            <div class="carousel-content">
+              <p class="carousel-title">{{images[imageIndex].title}}</p>
+              <p>{{images[imageIndex].text}}</p>
+            </div>
+
+            <div @:click="prevImage()" class="carousel-btn prev">
+              <i class="fa-solid fa-angle-left"></i>
+            </div>
+
+            <div @:click="nextImage()" class="carousel-btn next">
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+
+            <div class="carousel-indicator">
+              <div 
+                v-for="(_, i)
+                in images"
+                :class="this.imageIndex === i ? 'active' : null"
+              ></div>
+            </div>
+
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

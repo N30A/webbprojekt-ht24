@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/icons/favicon.ico">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/simon.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer src="/js/simon.js"></script>
+    <title>Simon</title>
+  </head>
+  <body>
+    <main id="app">
+      <header id="header">
+        <a href="/">
+          <img src="/assets/icons/GabFilNeoSim.png" alt="company logo">
+        </a>
+        <nav id="navbar" :class="showMenu ? 'mobile-active' : null">
+          <ul>
+            <li><a href="/pages/gabriel.html">Gabriel</a></li>
+            <li><a href="/pages/filip.html">Filip</a></li>
+            <li><a href="/pages/neo.html">Neo</a></li>
+            <li><a href="/pages/simon.html">Simon</a></li>
+          </ul>
+        </nav>
+        <button id="hamburger-btn">
+          <img
+           src="/assets/icons/menu.svg"
+           alt="Hamburger logo"
+           @click="toggleMenu()"
+          >
+        </button>
+      </header>
+      <section id="hero">
+        <div class="block">
+          <img src="../assets/images/simon/headshot.png" alt="" id="hero-image">
+          <div class="textcontainer">
+            <h1>Simon</h1>
+            <p id="role">Konsult hos GabFilNeoSim</p>
+            <p>Jag utvecklar
+              robusta och skalbara webbsystem för en digitaliserad
+              framtid
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="projects">
+        <h1>Ett urval av projekt jag har utvecklat</h1>
+        <div class="carousell-container">
+          <button @click="changeCarousellActive(-1)"> &lt</button>
+          <div class="carousell">
+            <div class="carousell-item" 
+            v-for="project in projects" 
+            :key="project.id - 16" 
+            :id="project.id - 16"
+            :class="getClassName(project.id - 16)"
+            >
+                <h2>{{project.title}}</h2>
+                <p class="customer">{{project.customer}}</p>
+                <p class="description">{{project.description}}</p>
+                <div class="imagecontainer">
+                  <img :src="project.img" alt="">
+                </div>
+            </div>
+          </div>
+          <button @click="changeCarousellActive(1)"> &gt </button>
+        </div>
+      </section>
+      <section id="skills">
+        <h1>Relevanta färdigheter</h1>
+        <div class="container">
+          <div class="skillitem" 
+          v-for="skill in skills"
+          :key="skill.id"
+          >
+            <div class="title">
+              <p>{{skill.title}}</p>
+              <img :src="'/assets/icons/' + skill.img" alt="">
+            </div>
+            <div class="progressbar">
+              <span :style="'width: ' + skill.percentage + '%'">
+                <span class="fill"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

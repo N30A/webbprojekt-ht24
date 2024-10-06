@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Systemvetenskapliga programmet",
+    "date": "2024-2027",
+    "place": "Örebro Universitet, Örebro, Sverige.",
+    "courses": "Databassystem, datamodellering, objektorienterad programmering & problemlösning, Introduktion till systemutveckling"
+  },
+  {
+    "id": 2,
+    "title": "Webbutveckling 1",
+    "date": "Jan-Juni 2023",
+    "place": "Luleå Tekniska Universitet, distans.",
+    "courses": "HTML, CSS, UI/UX"
+  }
+]

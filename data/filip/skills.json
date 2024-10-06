@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "title": "CSS",
+    "cat": "UI/UX",
+    "img": "css",
+    "percentage": 85
+  },
+  {
+    "id": 2,
+    "title": "HTML",
+    "cat": "UI/UX",
+    "img": "html",
+    "percentage": 95
+  },
+  {
+    "id": 3,
+    "title": "JAVA",
+    "cat": "BACKEND",
+    "img": "java",
+    "percentage": 30
+  },
+  {
+    "id": 4,
+    "title": "MYSQL",
+    "cat": "DATABASES",
+    "img": "mysql",
+    "percentage": 50
+  },
+  {
+    "id": 5,
+    "title": "NODE",
+    "cat": "BACKEND",
+    "img": "node",
+    "percentage": 15
+  },
+  {
+    "id": 6,
+    "title": "POSTGRESQL",
+    "cat": "DATABASES",
+    "img": "postgresql",
+    "percentage": 20
+  },
+  {
+    "id": 7,
+    "title": "PYTHON",
+    "cat": "BACKEND",
+    "img": "python",
+    "percentage": 55
+  },
+  {
+    "id": 8,
+    "title": "REACT",
+    "cat": "UI/UX",
+    "img": "react",
+    "percentage": 70
+  },
+  {
+    "id": 9,
+    "title": "SASS",
+    "cat": "UI/UX",
+    "img": "sass",
+    "percentage": 80
+  }
+]
